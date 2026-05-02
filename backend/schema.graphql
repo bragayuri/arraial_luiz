@@ -1,0 +1,147 @@
+# ============================================================
+#  Arraiau do Luiz — Schema GraphQL
+# ============================================================
+
+# ──────────────────────────────────────────
+# Tipos base
+# ──────────────────────────────────────────
+
+"""Convidado da festa"""
+type Guest {
+  id:        ID!
+  name:      String!
+  phone:     String
+  email:     String
+  confirmed: Boolean!
+  plusOne:   Int!
+  notes:     String
+  """Itens que este convidado reivindicou trazer"""
+  items:     [Item!]!
+  createdAt: String!
+  updatedAt: String!
+}
+
+"""Item da lista de insumos da festa"""
+type Item {
+  id:          ID!
+  name:        String!
+  description: String
+  quantity:    Int!
+  category:    String
+  """Convidado que reivindicou este item (null = disponível)"""
+  claimedBy:   Guest
+  claimedAt:   String
+  createdAt:   String!
+  updatedAt:   String!
+}
+
+# ──────────────────────────────────────────
+# Inputs para mutations
+# ──────────────────────────────────────────
+
+input CreateGuestInput {
+  name:      String!
+  phone:     String
+  email:     String
+  confirmed: Boolean
+  plusOne:   Int
+  notes:     String
+}
+
+input UpdateGuestInput {
+  name:      String
+  phone:     String
+  email:     String
+  confirmed: Boolean
+  plusOne:   Int
+  notes:     String
+}
+
+input CreateItemInput {
+  name:        String!
+  description: String
+  quantity:    Int
+  category:    String
+}
+
+input UpdateItemInput {
+  name:        String
+  description: String
+  quantity:    Int
+  category:    String
+}
+
+# ──────────────────────────────────────────
+# Queries
+# ──────────────────────────────────────────
+
+type Query {
+  """Lista todos os convidados"""
+  guests: [Guest!]!
+
+  """Busca um convidado pelo ID"""
+  guest(id: ID!): Guest
+
+  """Lista todos os itens"""
+  items: [Item!]!
+
+  """Busca um item pelo ID"""
+  item(id: ID!): Item
+
+  """Lista itens ainda disponíveis (não reivindicados)"""
+  availableItems: [Item!]!
+
+  """Lista itens por categoria"""
+  itemsByCategory(category: String!): [Item!]!
+
+  """Resumo da festa (totais)"""
+  partySummary: PartySummary!
+}
+
+"""Resumo estatístico da festa"""
+type PartySummary {
+  totalGuests:     Int!
+  confirmedGuests: Int!
+  totalItems:      Int!
+  claimedItems:    Int!
+  availableItems:  Int!
+}
+
+# ──────────────────────────────────────────
+# Mutations
+# ──────────────────────────────────────────
+
+type Mutation {
+  # ── Guests ──────────────────────────────
+
+  """Cria um novo convidado"""
+  createGuest(input: CreateGuestInput!): Guest!
+
+  """Atualiza dados de um convidado"""
+  updateGuest(id: ID!, input: UpdateGuestInput!): Guest!
+
+  """Remove um convidado"""
+  deleteGuest(id: ID!): Boolean!
+
+  """Confirma presença de um convidado"""
+  confirmGuest(id: ID!): Guest!
+
+  # ── Items ───────────────────────────────
+
+  """Cria um novo item na lista de insumos"""
+  createItem(input: CreateItemInput!): Item!
+
+  """Atualiza dados de um item"""
+  updateItem(id: ID!, input: UpdateItemInput!): Item!
+
+  """Remove um item da lista"""
+  deleteItem(id: ID!): Boolean!
+
+  # ── Claim ───────────────────────────────
+
+  """Convidado reivindica responsabilidade por um item"""
+  claimItem(itemId: ID!, guestId: ID!): Item!
+
+  """Convidado libera um item que havia reivindicado"""
+  unclaimItem(itemId: ID!): Item!
+}

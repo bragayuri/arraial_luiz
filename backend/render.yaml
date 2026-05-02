@@ -1,0 +1,23 @@
+# render.yaml — Deploy no Render.com
+# Coloque este arquivo na raiz do repositório
+# Docs: https://render.com/docs/blueprint-spec
+
+services:
+  - type: web
+    name: arraiau-do-luiz-backend
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: DATABASE_URL
+        fromDatabase:
+          name: arraiau-db
+          property: connectionString
+
+databases:
+  - name: arraiau-db
+    databaseName: arraiau
+    user: arraiau_user
+    plan: free
