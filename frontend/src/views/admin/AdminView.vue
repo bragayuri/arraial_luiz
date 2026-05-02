@@ -114,6 +114,15 @@
           @delete-item="handleDeleteItem"
         />
       </section>
+
+      <!-- Tab: Chamada -->
+      <section v-show="activeTab === 'attendance'">
+        <AttendancePanel
+          :guests="guests"
+          :loading="guestsLoading"
+          @refresh="handleRefresh"
+        />
+      </section>
     </main>
 
     <!-- Modal de convidado -->
@@ -164,9 +173,10 @@ import { ref, computed } from 'vue'
 import { useRouter } from 'vue-router'
 import { useQuery, useMutation } from '@vue/apollo-composable'
 
-import GuestsTable  from '@/components/admin/GuestsTable.vue'
-import ItemsManager from '@/components/admin/ItemsManager.vue'
-import GuestModal   from '@/components/admin/GuestModal.vue'
+import GuestsTable      from '@/components/admin/GuestsTable.vue'
+import ItemsManager    from '@/components/admin/ItemsManager.vue'
+import GuestModal      from '@/components/admin/GuestModal.vue'
+import AttendancePanel from '@/components/admin/AttendancePanel.vue'
 import { clearAdminSession } from '@/composables/useAdminAuth.js'
 
 import {
@@ -184,8 +194,9 @@ import {
 const router = useRouter()
 
 const TABS = [
-  { id: 'guests', icon: '👥', label: 'Convidados' },
-  { id: 'items',  icon: '🛒', label: 'Insumos' },
+  { id: 'guests',     icon: '👥', label: 'Convidados' },
+  { id: 'items',      icon: '🛒', label: 'Insumos' },
+  { id: 'attendance', icon: '✅', label: 'Chamada' },
 ]
 const activeTab = ref('guests')
 

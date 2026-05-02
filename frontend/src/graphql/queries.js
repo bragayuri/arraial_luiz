@@ -86,7 +86,7 @@ export const GET_PARTY_SUMMARY = gql`
 
 // ── Mutations ────────────────────────────────────────────
 
-/** Confirma presença do convidado */
+/** Confirma presença do convidado (usado pelo próprio convidado e pela chamada do admin) */
 export const CONFIRM_GUEST = gql`
   ${GUEST_FIELDS}
   mutation ConfirmGuest($id: ID!) {

@@ -83,12 +83,30 @@ async function start() {
 
   const PORT = parseInt(process.env.PORT ?? '4000', 10);
 
+  // CORS: libera o frontend em produção + localhost em dev
+  const allowedOrigins = [
+    'http://localhost:5173',
+    'http://localhost:4173',
+    ...(process.env.FRONTEND_URL ? [process.env.FRONTEND_URL] : []),
+  ];
+
   const { url } = await startStandaloneServer(server, {
     listen: { port: PORT, host: '0.0.0.0' },
     context: async ({ req }) => ({
-      // Contexto disponível em todos os resolvers (ex: autenticação futura)
       headers: req.headers,
     }),
+    // Apollo Standalone aceita corsOptions diretamente
+    cors: {
+      origin: (origin, callback) => {
+        // Permite sem origem (curl, mobile) e origens permitidas
+        if (!origin || allowedOrigins.includes(origin)) {
+          callback(null, true);
+        } else {
+          callback(new Error(`CORS bloqueado: ${origin}`));
+        }
+      },
+      credentials: true,
+    },
   });
 
   console.log(`🎉 Arraiau do Luiz — GraphQL server rodando em: ${url}`);
