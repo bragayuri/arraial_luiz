@@ -98,7 +98,7 @@
 import BandeirinhasSvg from './BandeirinhasSvg.vue'
 
 defineProps({
-  partyDate:        { type: String, default: 'Sábado, 6 de Junho de 2025' },
+  partyDate:        { type: String, default: 'Sábado, 6 de Junho de 2026' },
   partyTime:        { type: String, default: 'A partir das 16h' },
   partyLocation:    { type: String, default: 'Ver no Google Maps' },
   partyLocationUrl: { type: String, default: null },

@@ -21,7 +21,7 @@
 
       <!-- Hero com foto e bandeirinhas -->
       <BandeirinhasHero
-        party-date="Sábado, 6 de Junho de 2025"
+        party-date="Sábado, 6 de Junho de 2026"
         party-time="A partir das 16h"
         party-location="Ver no Google Maps"
         party-location-url="https://www.google.com/maps/search/?api=1&query=D16F9C5"
@@ -186,7 +186,7 @@
       <footer class="bandeirinhas-bar mt-12 opacity-60" />
       <div class="py-6 text-center">
         <p class="font-body text-wood-400 text-xs">
-          Feito com ❤️ para o Arraial do Luiz · 2025
+          Feito com ❤️ para o Arraial do Luiz · 2026
         </p>
       </div>
     </template>
