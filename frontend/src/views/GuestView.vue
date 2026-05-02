@@ -38,7 +38,7 @@
         <p class="font-body text-wood-600 text-lg leading-relaxed max-w-prose mx-auto">
           Você foi convidado para a primeira edição do Arraial do Luiz!
           Vai ter música, quadrilha, comida típica e muita alegria!!
-         <br> <strong class="text-bark">Conta pra nóis si você vem so?</strong>
+         <br> <strong class="text-bark">Conta pra nóis si você vem sô?</strong>
         </p>
       </section>
 
@@ -77,13 +77,33 @@
               @click="handleConfirm"
             >
               <span v-if="confirmLoading">Confirmando... 🤞</span>
-              <span v-else>✅ Confirmar Presença!</span>
+              <span v-else>✅ Vou sim, uai!!</span>
             </button>
 
             <p v-if="confirmError" class="mt-3 text-sm text-red-500 font-body">
               Ops! Algo deu errado. Tente de novo. 😅
             </p>
           </template>
+        </div>
+      </section>
+
+      <!-- ── Seção: Traje Caipira ─────────────────────────── -->
+      <div class="festive-divider max-w-2xl mx-auto px-6">
+        <span class="font-festive text-wood-400 text-2xl px-2 whitespace-nowrap">
+          Traje Caipira
+        </span>
+      </div>
+
+      <section class="max-w-2xl mx-auto px-6 pb-10">
+        <div
+          class="bg-white/70 backdrop-blur-sm rounded-3xl border border-wood-200
+                 shadow-card p-6 text-center"
+        >
+          <div class="text-4xl mb-3">👒</div>
+          <p class="font-body text-wood-600 leading-relaxed">
+            Vista-se à caráter! Chapéu de palha, xadrez, suspensório,
+            vestido florido... quanto mais caipira, melhor! 🌻
+          </p>
         </div>
       </section>
 
@@ -98,7 +118,6 @@
       <section class="max-w-2xl mx-auto px-6 pb-8">
         <p class="font-body text-wood-500 text-center text-sm mb-6 leading-relaxed">
           Quer colaborar com a festa? Escolha um item para trazer.
-         
         </p>
 
         <!-- Loading dos itens -->
