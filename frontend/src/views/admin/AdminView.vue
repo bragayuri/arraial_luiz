@@ -9,7 +9,7 @@
         <!-- Logo -->
         <div class="flex items-center gap-2">
           <span class="text-xl">🌽</span>
-          <span class="font-festive text-xl text-wood-700 leading-none">Arraiau do Luiz</span>
+          <span class="font-festive text-xl text-wood-700 leading-none">Arraial do Luiz</span>
           <span class="hidden sm:inline text-wood-300 mx-1">·</span>
           <span class="hidden sm:inline font-body text-sm text-wood-500">Admin</span>
         </div>

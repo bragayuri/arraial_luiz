@@ -24,7 +24,7 @@
         </h2>
         <p class="font-body text-wood-600 leading-relaxed mb-6">
           <strong class="text-bark">{{ guestName }}</strong>,
-          sua presença foi confirmada no <em>Arraiau do Luiz</em>!
+          sua presença foi confirmada no <em>Arraial do Luiz</em>!
           <br />
           <span v-if="claimedItemName" class="mt-2 inline-block text-sm">
             Você ficou de trazer <strong>{{ claimedItemName }}</strong>. Obrigado! 🙏

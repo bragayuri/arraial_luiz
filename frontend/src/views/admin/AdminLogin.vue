@@ -12,7 +12,7 @@
       <!-- Logo / título -->
       <div class="text-center mb-8">
         <div class="text-6xl mb-4">🌽</div>
-        <h1 class="font-festive text-4xl text-wood-700 mb-1">Arraiau do Luiz</h1>
+        <h1 class="font-festive text-4xl text-wood-700 mb-1">Arraial do Luiz</h1>
         <p class="font-body text-wood-500 text-sm">Área do Administrador</p>
       </div>
 

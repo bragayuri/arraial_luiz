@@ -18,7 +18,7 @@ const routes = [
     path: '/convite/:guestId',
     name: 'GuestView',
     component: () => import('@/views/GuestView.vue'),
-    meta: { title: 'Arraiau do Luiz — Seu Convite' },
+    meta: { title: 'Arraial do Luiz — Seu Convite' },
   },
 
   // ── Admin ─────────────────────────────────────────────
@@ -32,7 +32,7 @@ const routes = [
     path: '/admin',
     name: 'AdminView',
     component: () => import('@/views/admin/AdminView.vue'),
-    meta: { title: 'Admin — Arraiau do Luiz', requiresAdmin: true },
+    meta: { title: 'Admin — Arraial do Luiz', requiresAdmin: true },
   },
 
   // ── 404 fallback ──────────────────────────────────────
@@ -50,7 +50,7 @@ const router = createRouter({
 
 // Navigation guard: protege /admin
 router.beforeEach((to) => {
-  document.title = to.meta.title ?? 'Arraiau do Luiz 🌽'
+  document.title = to.meta.title ?? 'Arraial do Luiz 🌽'
 
   if (to.meta.requiresAdmin && !isAdminAuthenticated()) {
     return { name: 'AdminLogin' }

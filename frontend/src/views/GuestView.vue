@@ -36,7 +36,7 @@
           {{ guest.name }} <span class="text-wood-500">🤠</span>
         </h2>
         <p class="font-body text-wood-600 text-lg leading-relaxed max-w-prose mx-auto">
-          Você foi convidado para a primeira edição do Arraiau do Luiz!
+          Você foi convidado para a primeira edição do Arraial do Luiz!
           Vai ter música, quadrilha, comida típica e muita alegria!!
          <br> <strong class="text-bark">Conta pra nóis si você vem so?</strong>
         </p>
@@ -61,7 +61,6 @@
 
           <!-- Ainda não confirmou -->
           <template v-else>
-            <div class="text-5xl mb-4">🎪</div>
             <h3 class="font-display text-2xl text-bark mb-2">
               Vai comparecer?
             </h3>
@@ -70,37 +69,7 @@
             </p>
 
             <!-- Acompanhantes: stepper 0–5 -->
-            <div class="mb-6">
-              <p class="font-body text-wood-600 text-sm mb-3">
-                Quantos acompanhantes você vai trazer?
-              </p>
-              <div class="flex items-center justify-center gap-4">
-                <button
-                  type="button"
-                  class="w-10 h-10 rounded-full border-2 border-wood-300 flex items-center justify-center
-                         font-body font-bold text-wood-600 text-lg transition-colors
-                         hover:border-wood-500 hover:bg-wood-100 disabled:opacity-30 disabled:cursor-not-allowed"
-                  :disabled="plusOneCount === 0"
-                  @click="plusOneCount = Math.max(0, plusOneCount - 1)"
-                >−</button>
-
-                <div class="text-center min-w-[4rem]">
-                  <span class="font-display text-3xl text-bark">{{ plusOneCount }}</span>
-                  <p class="font-body text-xs text-wood-400 mt-0.5">
-                    {{ plusOneCount === 0 ? 'sozinho(a)' : plusOneCount === 1 ? 'acompanhante' : 'acompanhantes' }}
-                  </p>
-                </div>
-
-                <button
-                  type="button"
-                  class="w-10 h-10 rounded-full border-2 border-wood-300 flex items-center justify-center
-                         font-body font-bold text-wood-600 text-lg transition-colors
-                         hover:border-wood-500 hover:bg-wood-100 disabled:opacity-30 disabled:cursor-not-allowed"
-                  :disabled="plusOneCount === 5"
-                  @click="plusOneCount = Math.min(5, plusOneCount + 1)"
-                >+</button>
-              </div>
-            </div>
+          
 
             <button
               class="btn-festive w-full text-lg py-4"
@@ -121,7 +90,7 @@
       <!-- ── Divisor festivo ───────────────────────────────── -->
       <div class="festive-divider max-w-2xl mx-auto px-6">
         <span class="font-festive text-wood-400 text-2xl px-2 whitespace-nowrap">
-          Lista de Insumos
+         Quitutes para a festa
         </span>
       </div>
 
@@ -129,7 +98,7 @@
       <section class="max-w-2xl mx-auto px-6 pb-8">
         <p class="font-body text-wood-500 text-center text-sm mb-6 leading-relaxed">
           Quer colaborar com a festa? Escolha um item para trazer.
-          <br />Cada item pode ser reivindicado por apenas um convidado.
+         
         </p>
 
         <!-- Loading dos itens -->
@@ -198,7 +167,7 @@
       <footer class="bandeirinhas-bar mt-12 opacity-60" />
       <div class="py-6 text-center">
         <p class="font-body text-wood-400 text-xs">
-          Feito com ❤️ para o Arraiau do Luiz · 2025
+          Feito com ❤️ para o Arraial do Luiz · 2025
         </p>
       </div>
     </template>

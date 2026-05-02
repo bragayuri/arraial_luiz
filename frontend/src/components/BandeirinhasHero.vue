@@ -6,7 +6,7 @@
     <div class="absolute inset-0">
       <img
         src="@/assets/hero.webp"
-        alt="Arraiau do Luiz"
+        alt="Arraial do Luiz"
         class="w-full h-full object-cover"
         loading="eager"
       />
@@ -47,7 +47,7 @@
         class="animate-fadeUp font-festive text-white text-shadow-festive leading-tight mb-3"
         style="font-size: clamp(3rem, 10vw, 6rem); animation-delay: 0.25s"
       >
-        Arraiau do Luiz
+        Arraial do Luiz
       </h1>
 
       <!-- Subtítulo / data -->
@@ -55,7 +55,7 @@
         class="animate-fadeUp font-display italic text-cream-dark text-xl md:text-2xl mb-6"
         style="animation-delay: 0.4s"
       >
-        Uma noite de festa, dança típica, brasilidades e muita alegria!
+        Um dia de festa, dança típica, brasilidades e muita alegria!
       </p>
 
       <!-- Detalhes da festa -->
